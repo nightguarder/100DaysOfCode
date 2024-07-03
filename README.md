@@ -7,11 +7,16 @@
 - [Lecture 3: Control Flow](#lecture-3-control-flow)
 - [Lecture 4: Methods](#lecture-4-methods)
 
+## Track Progress
+- [x] Prezentace 1 - Úvod (Bytecode)
+- [ ] Prezentace 1 - JVM
+- [ ] Prezentace 2 - Maven
 ## Lecture 1: Basics
 ### Topics Covered:
- **Variables, Loops, Conditionals**
+ **JVM, Bytecode ,Variables, Loops, Conditionals**
 
 ### Description:
- In this lecture, I learned the fundamentals of Java, including how to declare variables, use loops, and write conditional statements.
+ - In this lecture, I learned the fundamentals of Java, including how JVM runtime works and how Bytecode is interpreted..
 
 ### Notes: [Lecture 1 Notes](.notes/Lecture%201)
+### PPT: [Prezentace 1 Úvod a JVM](PDF/PPJ_01_Úvod_a_JVM.pdf)
