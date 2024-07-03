@@ -1,5 +1,5 @@
 # 100 DaysOfCode - Java Course
-- This repository contains my journey of learning Java with Spring Boot through the 100DaysOfCode course!
+- This repository contains my journey of learning Java & Spring Boot through the 100DaysOfCode course and university Lectures!
 
 ## Table of Contents
 - [Lecture 1: Basics](#lecture-1-basics)
@@ -13,10 +13,11 @@
 - [ ] Prezentace 1 - JVM
 - [ ] Prezentace 2 - Maven
 
-## Youtube
-*Complimentary learning videos and tutorials...*
+## Learning
+*Complimentary learning videos, tutorials and Docs...*
 - **[Java Full Course Bro](https://www.youtube.com/watch?v=xk4_1vDrzzo)**
-
+- **[100DaysOfCode](https://www.100daysofcode.io/learn/java)**
+- **[Baeuldung Java](https://www.baeldung.com/get-started-with-java-series)**
 ## Lecture 1: Basics
 ### Topics Covered:
  **JVM, Bytecode ,Variables, Loops, Conditionals**
