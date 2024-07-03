@@ -1,4 +1,4 @@
-package Lecture1;
+package Lectures;
 public class Lecture1 {
     //By making Bytecode a static nested class, 
     //you can instantiate it directly using new Bytecode()
