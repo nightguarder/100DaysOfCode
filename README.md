@@ -7,10 +7,16 @@
 - [Lecture 3: Control Flow](#lecture-3-control-flow)
 - [Lecture 4: Methods](#lecture-4-methods)
 
-## Track Progress
+## Progress
+*Track your learning progress...*
 - [x] Prezentace 1 - Úvod (Bytecode)
 - [ ] Prezentace 1 - JVM
 - [ ] Prezentace 2 - Maven
+
+## Youtube
+*Complimentary learning videos and tutorials...*
+- **[Java Full Course Bro](https://www.youtube.com/watch?v=xk4_1vDrzzo)**
+
 ## Lecture 1: Basics
 ### Topics Covered:
  **JVM, Bytecode ,Variables, Loops, Conditionals**

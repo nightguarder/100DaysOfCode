@@ -1,0 +1,12 @@
+## Day 1
+
+1. Write a program that prints "Hello World!" to the console
+2. Add single line and multi-line comments to your code
+
+## Day 2
+1. Declare and initialize variables for various data types including integer (int), floating-point number (double), and string (String). Then, print each variable to the console.
+
+## Day 3
+1. Write a program that reads user input and print it to the console.
+2. Modify the program to read and print different data type inputs (integers, floating-point numbers, strings)
+3. Write a program to read the user input using Scanner class

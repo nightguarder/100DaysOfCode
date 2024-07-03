@@ -24,8 +24,4 @@ public class Lecture1 {
         System.out.println("plus(2) = " + new Lecture1().new Bytecode1().plus(2));
     }
 }
-//Single line comment
-/* Multi line comment 
-    Another line 
-*/
 // 📌 Lecture 1 📝 🗑️
