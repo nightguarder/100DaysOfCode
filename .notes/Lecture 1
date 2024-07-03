@@ -1,0 +1,12 @@
+### Day 1 - Day 1 - Hello World
+
+- Write a program that prints "Hello World!" to the console. Add single line and multi-line comments to your code.
+
+- 1. What is a Java compiler and how does it work?
+    - JVM (Java Virtual Machine)
+    - 
+- 2. Difference between Compiler and Interpreter
+
+### Day 2 - Variables and Data Types
+
+-  Declare and initialize variables for various data types including integer (int), floating-point number (double), and string (String). Then, print each variable to the console.
