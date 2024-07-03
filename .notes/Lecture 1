@@ -3,8 +3,37 @@
 - Write a program that prints "Hello World!" to the console. Add single line and multi-line comments to your code.
 
 - 1. What is a Java compiler and how does it work?
-    - JVM (Java Virtual Machine)
-    - 
+- **JVM (Java Virtual Machine)**
+    - Podpora pro řadu platforem (přenositelnost)
+    - Stabilita, popularita, Udržitelnost kódu
+    - Zásobníkový stroj
+    - GarbageCollector *možný memory leak* 
+    - Pevně definované typy
+        - Big Endian = *Nejvyšší byte (nejvíce významný byte) je uložen na nejnižší adrese paměti.*
+        - Little Endian = *Nejnižší byte (nejméně významný byte) je uložen na nejnižší adrese paměti.*
+        - *Big Endian* - 01000001 (bin) == 1 + 64(dec) == (2^1*1 + 2^6*1)  čteme přímo zleva doprava kde . 
+        - *Little Endian* - 1000001 (bin) == 64 + 1 (dec) == (2^6 *1 + 2^1 *1) čtení bitů z prava do leva, kde První byte je nejnižší. 
+- **How it works?**
+    - **Bytekód** = Strojový kód pro JVM
+        - Skládá se z Instrukce 1 byte + parametry
+        - istore, astore, lstore, fstore ...
+        - *viz. obrázek Bytekód* [Slide 18](PDF/PPJ_01_Úvod_a_JVM.pdf)
+    - Program (Program.java) -> Kompilace (javac) -> javacProgram.java - Program.class -> Bytekód(Program.class)--> javap -v Main.class - zobrazení bytecode
+    - **JAR** = (Java ARchive) Balík tříd
+        - Pokud máme více tříd zkompilujeme do JAR
+        - jar cf my.jar trida1.class trida2.class
+        - Archív je základní jednotka pro sdílení kódu
+    - **Classpath** = Místo pro vyhledávání tříd *classloaderem (jak víme je nástroj součástí JRE)*
+        - Musí být schopen vyhledat všechny třídy i třídy knihoven –jinak ClassNotFoundException
+
+- **JRE (Java Runtime Environment)**
+    - Běhové prostředí, pro spuštění zkompilovaného programu, např. jar
+    - Obsahuje JVM
+- **JDK (Java SE Development Kit)**
+    - JRE + nástroje pro vývoj:
+    - javac *kompiler*
+    - javap *dissasembler*
+    - jdb *debugger*
 - 2. Difference between Compiler and Interpreter
 
 ### Day 2 - Variables and Data Types
