@@ -12,6 +12,7 @@
 - [x] Prezentace 1 - Úvod (Bytecode)
 - [ ] Prezentace 1 - JVM
 - [ ] Prezentace 2 - Maven
+- [ ] Prezentace 3 - Spring framework
 
 ## Learning
 *Complimentary learning videos, tutorials and Docs...*

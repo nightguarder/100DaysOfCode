@@ -1,6 +1,7 @@
 # PPJ (Pokročilé programování na platformě Java)
  - Přednášky na vývoj aplikace v jazyce Java 
 
+## Úvod do Javy
 - 1. What is a Java compiler and how does it work?
 - **JVM (Java Virtual Machine)**
     - Podpora pro řadu platforem (přenositelnost)
@@ -35,6 +36,77 @@
     - jdb *debugger*
 - 2. Difference between Compiler and Interpreter
 
-### Day 2 - Variables and Data Types
+## JVM Compiler
 
--  Declare and initialize variables for various data types including integer (int), floating-point number (double), and string (String). Then, print each variable to the console.
+- **JVM ** 
+    - JVM (Java Virtual Machine)
+    - Funguje jako zásobník paměti *LIFO (Last in, First Out)*
+    - Má 2 typy zásobníků (JVM pro interpretované metody a nativním)
+    - **Zásobník(y) **
+        - Ukládání lokální proměnné, návratové adresy a argumenty procedury.
+        - Statická Alokace paměti je preferovaná přes pole.
+        - Zásobník rozdělen na rámce: 
+        - *Stack Frames:* rámec uchovává stav jedné instance procedury
+        - *%esp (Stack Pointer):* Ukazuje na nejnižší adresu aktuálního rámce, což je adresa prvku na vrcholu zásobníku.
+        - *%ebp (Base Pointer):* Uchovává adresu začátku aktuálního rámce, což usnadňuje přístup k lokálním proměnným a parametrům metody.
+    - Běh programu v zásobníku: [Slide 30 a 31](/PDF/PPJ_01_Úvod_a_JVM.pdf)
+
+    - JVM je dále rozdělen na Thread (vlákna) a Heap (Halda)
+    - **Thread:**
+        - Každé vlákno obsahuje:
+        - 1. Program Counter:   *adresa aktuálně prováděné instrukce* cmon you already know this..
+        - 2. Zásobník pro interpretované metody:    *lokální proměnné, operand ...*
+        - 3. Zásobník pro nativní metody:   *metody napsané v c++ např main.c*
+        - ![Native Method Stack](/img/JNInativeStack.png)
+    - **Shared areas**
+        - Společná oblast pro JVM instanci
+        - 1. Heap: *Zde probíhá Automatická správa paměti přes **Garbage Collector***
+        - 2. Method Area: *runtime kontantní pool včetně bytecode metod a další informace o metodě (int, void, public, static...)*
+    - Kompletní schéma JVM: [Slide 35 a 36](/PDF/PPJ_01_Úvod_a_JVM.pdf)
+    
+    - **Výhody:**
+        - efektivní správa paměti
+        - rekurzivní volání, opakovaný kód
+        - vnořené volání metod 
+        - multiplatformí a multi-threading
+    - **Nevýhody**
+        - paměťový model JVM je složitý - pracuje se 2 typy zásobníků
+        - JVM native napsaný v C++ or C
+        - Garbage Collector může způsobit krátkodobé zpoždění v běhu aplikace
+        - slow first start compilation...
+
+    - 1. Interpreter: *Java Source Code Interpreter* 
+        - *pro málo volané instrukce*
+
+    - 2. JIT Compiler: * **JIT** = Just In Time*
+        - Přeloženo do nativních instrukcí
+        - Lze nastavit úroveň optimalizací v JVM (Client / Server)
+
+    - 3. JNI: *Java Native Interface*
+        - většinou knihovny pro práci s hardwarem a OS
+        - zrychlení běhu aplikace pomocí nativních knihove napsané v .c
+        - složitost kódu a údržba
+    - 4. GC: *Garbage Collector*
+        - Automatická správa paměti nepoužitých objektů které nejsou potřeba
+        - Paměť je rozdělena do generací:
+        - *Young, Old, Permanent*
+        - CMS - velmi krátké stop the word události
+        - *Stop-the-world (STW)*
+         - znamená že JVM zastaví všechny běžící aplikace, aby mohla provést garbage collection. 
+         - Během této doby aplikace neprovádí žádné výpočty, což může způsobit latenci. 
+         - Různé GC algoritmy mají různé strategie a délky STW událostí:
+         - *Serial, Parallell, CMS - nejrychlejší, G1*
+         - nevim asi netřeba znát detaily.. 
+         - [Slide 44 STW](/PDF/PPJ_01_Úvod_a_JVM.pdf)
+    - *Otázky k GC: *
+        - příklad aplikací, pro které je nevhodné použít GC a pro které
+        - Uveďte příklad aplikace, která je vhodná pro generační kolektor a příklad nevhodné aplikace
+        - **Nevýhody**
+        - většina objektů má krátkou životnost, zatímco menšina objektů žije mnohem déle.
+        - Bez kontroly nad alokací a uvolňováním paměti – problém pro performance critical aplikace a low level aplikace (ovladače, OS)
+        - Stop the world události
+        - Zabírá část výpočetního výkonu (obvykle velmi malou) – stejně problém pro mobilní klienty
+        - Bezpečnostní rizika...
+        - [MemoryLeak](https://www.toptal.com/java/hunting-memory-leaks-in-java#memleak)
+        - [Memory Leak example](/Lectures/MemoryLeak.java)
+        - [Memory Leak solution](/Lectures/MemLeakSolution.java)
