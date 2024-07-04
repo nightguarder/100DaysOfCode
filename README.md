@@ -10,8 +10,8 @@
 ## Progress
 *Track your learning progress...*
 - [x] Prezentace 1 - Úvod (Bytecode)
-- [ ] Prezentace 1 - JVM
-- [ ] Prezentace 2 - Maven
+- [x] Prezentace 1 - JVM
+- [ ] Prezentace 2 - Správa projektu pomocí Maven
 - [ ] Prezentace 3 - Spring framework
 
 ## Learning
@@ -20,11 +20,40 @@
 - **[100DaysOfCode](https://www.100daysofcode.io/learn/java)**
 - **[Baeuldung Java](https://www.baeldung.com/get-started-with-java-series)**
 ## Lecture 1: Basics
-### Topics Covered:
- **JVM, Bytecode ,Variables, Loops, Conditionals**
-
 ### Description:
- - In this lecture, I learned the fundamentals of Java, including how JVM runtime works and how Bytecode is interpreted..
+ - Jak je java přeložena do bytekódu, jak se kompiluje a funguje JVM Zásobníky.Jak funguje Garbage Collector a co zapříčiní memory leak.
 
-### Notes: [Lecture 1 Notes](.notes/Lecture%201)
-### PPT: [Prezentace 1 Úvod a JVM](PDF/PPJ_01_Úvod_a_JVM.pdf)
+### Topics Covered:
+ **JVM, Bytecode, Zásobníky, JNI Stack a JVM Stack, Garbage Collector, Memory Leak**
+ - JNI Stack pro nativní knihovny v .c
+ - JVM Stack pro interpretované metody
+ - JVM jako funguje jako LIFO zásobník
+ - Garbage Collector a MemoryLeak
+
+
+### Notes: 
+[Lecture 1 Notes](.notes/Lecture%201)
+### PPT: 
+[Prezentace 1 Úvod a JVM](PDF/PPJ_01_Úvod_a_JVM.pdf)
+### Lectures:
+[Java programs](/Lectures/Lecture1.java)
+### Exercises: 
+[100DaysOfCode programs](/Exercise/Day1.java)
+
+## Lecture 2 - Správa projektu pomocí Maven
+### Description
+- Základy jmenné prostory, struktura projektu a build tools Apache Maven a Gradle. 
+### Topics Covered:
+**Dělení na služby  a moduly, Jmenné prostory, POM, Maven a Gradle**
+- Jmenné prostory: *cz.tul.ddrapp*
+- Struktura a konfigurace projektu: *model a služby*
+- Testování před nasazením a build
+- Apache Maven (XML) nebo **Gradle (Groovy)**
+    - lepší je Gradle jelikož řeší problémy předchozích verzí nástrojů Apache(XML) 
+- Maven --> Jenkins server
+
+### Notes:
+### PPT:
+[Prezentace 2 Správa projektu pomocí Maven](/PDF/PPJ_02_Správa_projektu_Maven.pdf)
+### Lectures:
+### Exercises:
