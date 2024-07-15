@@ -1,4 +1,4 @@
-package Lectures;
+package Lectures.Lecture1;
 
 // %esp (Stack Pointer): Ukazuje na nejnižší adresu aktuálního rámce, což je adresa prvku na vrcholu zásobníku.
 // %ebp (Base Pointer): Uchovává adresu začátku aktuálního rámce, což usnadňuje přístup k lokálním proměnným a parametrům metody.

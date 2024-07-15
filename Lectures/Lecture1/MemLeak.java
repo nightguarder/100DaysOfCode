@@ -1,4 +1,4 @@
-package Lectures;
+package Lectures.Lecture1;
 import java.util.HashMap;
 import java.util.Map;
 //https://www.toptal.com/java/hunting-memory-leaks-in-java#memleak

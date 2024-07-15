@@ -36,7 +36,7 @@
 ### PPT: 
 [Prezentace 1 Úvod a JVM](PDF/PPJ_01_Úvod_a_JVM.pdf)
 ### Lectures:
-[Java programs](/Lectures/Lecture1.java)
+[Java programs](/Lectures/Lecture1%20-%20Basics/)
 ### Exercises: 
 [100DaysOfCode programs](/Exercise/Day1.java)
 
@@ -53,6 +53,7 @@
 - Maven --> Jenkins server
 
 ### Notes:
+
 ### PPT:
 [Prezentace 2 Správa projektu pomocí Maven](/PDF/PPJ_02_Správa_projektu_Maven.pdf)
 ### Lectures:
