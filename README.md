@@ -3,7 +3,7 @@
 
 ## Table of Contents
 - [Lecture 1: Basics](#lecture-1-basics)
-- [Lecture 2: Data Types](#lecture-2-data-types)
+- [Lecture 2: Data Types](#lecture-2---správa-projektu-pomocí-maven)
 - [Lecture 3: Control Flow](#lecture-3-control-flow)
 - [Lecture 4: Methods](#lecture-4-methods)
 
@@ -11,7 +11,7 @@
 *Track your learning progress...*
 - [x] Prezentace 1 - Úvod (Bytecode)
 - [x] Prezentace 1 - JVM
-- [ ] Prezentace 2 - Správa projektu pomocí Maven
+- [x] Prezentace 2 - Správa projektu pomocí Maven
 - [ ] Prezentace 3 - Spring framework
 
 ## Learning
@@ -46,15 +46,17 @@
 ### Topics Covered:
 **Dělení na služby  a moduly, Jmenné prostory, POM, Maven a Gradle**
 - Jmenné prostory: *cz.tul.ddrapp*
-- Struktura a konfigurace projektu: *model a služby*
-- Testování před nasazením a build
-- Apache Maven (XML) nebo **Gradle (Groovy)**
+- Struktura a konfigurace projektu: *moduly a služby*
+- Testování před nasazením a build *test a build-release.sh*
+- **Apache Maven (XML)** nebo **Gradle (Groovy)**
     - lepší je Gradle jelikož řeší problémy předchozích verzí nástrojů Apache(XML) 
 - Maven --> Jenkins server
 
 ### Notes:
-
+[Lecture 2 notes](.notes/Lecture2)
 ### PPT:
-[Prezentace 2 Správa projektu pomocí Maven](/PDF/PPJ_02_Správa_projektu_Maven.pdf)
+[Prezentace 2 Správa projektu](/PDF/PPJ_02_Správa_projektu_Maven.pdf)
 ### Lectures:
+[using Namespaces](/Lectures/Lecture2/Lecture2.java)
+
 ### Exercises:
