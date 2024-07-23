@@ -74,6 +74,30 @@ __Vytvoření modulů:__
 - Make sure you have Maven installed: ``mvn --version ```
 - ``brew install maven``
 
+__Important Maven commands:__
+
+``mvn -v``
+```zsh
+cyrils@Cyrils-MBP mavenproject % mvn -v             
+Apache Maven 3.9.8 (36645f6c9b5079805ea5009217e36f2cffd34256)
+Maven home: /opt/homebrew/Cellar/maven/3.9.8/libexec
+```
+``mvn package`` *Creates a working build of the application*
+```zsh
+mvn package        
+[INFO] Scanning for projects...
+[INFO] -----------------< mavenproject.lecture2:mavenproject >-----------------
+[INFO] Building mavenproject 1.0-SNAPSHOT
+```
+
+``mvn dependency:tree`` *Show the full dependency tree structure with included libraries*
+```zsh
+--- dependency:3.6.1:tree (default-cli) @ mavenproject ---
+[INFO] \- org.springframework.boot:spring-boot-starter-web:jar:3.3.2:compile
+[INFO]    +- org.springframework.boot:spring-boot-starter:jar:3.3.2:compile
+[INFO]    |  +- org.springframework.boot:spring-boot:jar:3.3.2:compile
+```
+#### Start here:
 - __[Developing Your First Spring Boot Application](https://docs.spring.io/spring-boot/tutorial/first-application/index.html#getting-started.first-application.pom)__
 
 #### 1. Building pom.xml (Project settings)
@@ -132,15 +156,66 @@ public class MyApplication {
 - Type ``mvn spring-boot:run`` from the root project directory to start the application.
 - Open ``localhost:8080`` to see the result:
 
-```REST
+```rest
 http://localhost:8080/ 
 Spring Boot Maven Project is running!
 ```
+
+#### 5. Create an executable Jar
+- archive which contains your compiled classes along with all of the jar dependencies that your code needs to run.
+- We are creating "uber" jar. An uber jar packages combines all the classes from all the application’s dependencies into a single archive. The problem with this approach is that it becomes hard to see which libraries are in your application.
+    - *At a cost of a smaller size and faster build?*
+- add the ``spring-boot-maven-plugin`` to our ``pom.xml``
+
+```xml
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+```
+
 ### 7. Gradle
 - [Introduction to Gradle](https://www.softpost.org/gradle/introduction-to-gradle)
 - Make sure you have Gradle installed: ``gradle --version ``
 - ``brew install gradle``
 
+__Important Gradle commands:__
+
+- You can run using either **./gradlew** or **gradle**
+
+``gradle dependencies`` - *Show the full dependency tree structure with included libraries both for test and production environment*
+
+```zsh
+cyrils@Cyrils-MBP gradleproject % gradle dependencies
+compileClasspath - Compile classpath for source set 'main'.
++--- org.springframework.boot:spring-boot-starter -> 3.3.2
+|    +--- org.springframework.boot:spring-boot:3.3.2
+```
+
+``gradle build`` - *Run test and production environment build*
+
+
+```zsh
+cyrils@Cyrils-MBP gradleproject % gradle build
+BUILD SUCCESSFUL in 2s
+7 actionable tasks: 5 executed, 2 up-to-date
+```
+
+``gradle bootRun `` - *Start the SpringBot application* 
+    -  NOTE: You have to have 'org.springframework.boot plugin' in build.gradle!*
+
+```zsh
+cyrils@Cyrils-MBP gradleproject % gradle bootRun 
+2024-07-23T20:22:15.208+02:00  INFO 30640 --- [gradleproject] [           main] g.lecture2.gradleproject.MyApp           : Started MyApp in 0.709 seconds (process running for 0.845)
+> :bootRun
+```
+
+#### Start here:
+- __[Developing Your First Spring Boot Application](https://docs.spring.io/spring-boot/tutorial/first-application/index.html#getting-started.first-application.gradle)__
 #### 1. Configurating build.gradle (Build script)
 
 - add to: ``build.gradle``
@@ -188,5 +263,7 @@ dependencies {
 : Tomcat started on port 8080 (http) with context path '/'
 
 - Open ``localhost:8080`` to see the result:
-
-- __[Developing Your First Spring Boot Application](https://docs.spring.io/spring-boot/tutorial/first-application/index.html#getting-started.first-application.gradle)__
+```REST
+http://localhost:8080/ 
+Spring Boot Gradle Project is running!
+```
