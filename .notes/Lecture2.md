@@ -63,12 +63,30 @@ __Rozdělení modulů:__
 
 __Vytvoření modulů:__
 - v /root adresáři konfigurace *pom.xml*
+```xml
  <modules>
         <module>frontend</module>
         <module>backend</module>
-    </modules>
+</modules>
+```
 ### 6. Maven
-- [MAven tuttorial link:](https://www.softpost.org/maven/introduction-to-maven)
+
+- __[Developing Your First Spring Boot Application](https://docs.spring.io/spring-boot/tutorial/first-application/index.html#getting-started.first-application.pom)__
+
+add to: ``pom.xml``
+```xml
+<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent
+            <artifactId>
+		<version>3.3.2</version>
+</parent>
+````
+
+- Proceed to run  with ``mvn package``
+- [Introduction to Maven ](https://www.softpost.org/maven/introduction-to-maven)
 
 ### 7. Gradle
-- [Gradle tutorial link](https://www.softpost.org/gradle/introduction-to-gradle)
+- __[Developing Your First Spring Boot Application](https://docs.spring.io/spring-boot/tutorial/first-application/index.html#getting-started.first-application.gradle)__
+
+- [Introduction to Gradle](https://www.softpost.org/gradle/introduction-to-gradle)
