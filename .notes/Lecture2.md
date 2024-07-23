@@ -70,9 +70,13 @@ __Vytvoření modulů:__
 </modules>
 ```
 ### 6. Maven
+- [Introduction to Maven ](https://www.softpost.org/maven/introduction-to-maven)
+- Make sure you have Maven installed: ``mvn --version ```
+- ``brew install maven``
 
 - __[Developing Your First Spring Boot Application](https://docs.spring.io/spring-boot/tutorial/first-application/index.html#getting-started.first-application.pom)__
 
+#### 1. Building pom.xml (Project settings)
 add to: ``pom.xml``
 ```xml
 <parent>
@@ -81,12 +85,108 @@ add to: ``pom.xml``
             <artifactId>
 		<version>3.3.2</version>
 </parent>
-````
+```
 
 - Proceed to run  with ``mvn package``
-- [Introduction to Maven ](https://www.softpost.org/maven/introduction-to-maven)
 
+#### 2. Adding classpath dependencies 
+- basically add another maven built application(libraries) that are needed to run your App
+- add a ``spring-boot-starter-web dependency`` to ``pom.xml``
+- *optional*
+    - add ``<scope>test<scope>`` to only include these libraries in your test environment
+
+```xml
+<dependencies>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+</dependencies>
+```
+#### 3. Configuring the App
+- Create a Main .java file under ``src/main/java/MyApp.java``
+- With the following code:
+```java
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController // our class is a web @Controller, so Spring considers it when handling incoming web requests.
+@SpringBootApplication
+//This annotation has @EnableAutoConfiguration which tells Spring Boot to “guess” how you want to configure Spring, based on the jar dependencies that you have added
+public class MyApplication {
+
+	@RequestMapping("/")
+	String home() {
+		return "Hello World!";
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(MyApplication.class, args);
+	}
+
+}
+```
+#### 4. Running and Building the App
+- Type ``mvn spring-boot:run`` from the root project directory to start the application.
+- Open ``localhost:8080`` to see the result:
+
+```REST
+http://localhost:8080/ 
+Spring Boot Maven Project is running!
+```
 ### 7. Gradle
-- __[Developing Your First Spring Boot Application](https://docs.spring.io/spring-boot/tutorial/first-application/index.html#getting-started.first-application.gradle)__
-
 - [Introduction to Gradle](https://www.softpost.org/gradle/introduction-to-gradle)
+- Make sure you have Gradle installed: ``gradle --version ``
+- ``brew install gradle``
+
+#### 1. Configurating build.gradle (Build script)
+
+- add to: ``build.gradle``
+```xml
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.2'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+    //If using Snapshot or Milestone
+	<!-- maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' } -->
+}
+
+dependencies {
+}
+```
+- Test run it with ``gradle classes``
+
+#### 2. Add Classpath Dependencies
+
+add to ``build.gradle:```
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+
+- Test run it with ``gradle dependencies``
+
+#### 3. Configuring the App
+- Same setup as in [Maven setup](#3-configuring-the-app)
+
+#### 4. Running and building the App
+- check your dependencies and classes first: ``gradle dependencies``and ``gradle classes``
+- to build the app ``gradle build``
+- to start the springboot app : ``gradle bootRun``
+- You should get the following: 
+: Tomcat started on port 8080 (http) with context path '/'
+
+- Open ``localhost:8080`` to see the result:
+
+- __[Developing Your First Spring Boot Application](https://docs.spring.io/spring-boot/tutorial/first-application/index.html#getting-started.first-application.gradle)__
