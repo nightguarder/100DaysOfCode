@@ -19,6 +19,8 @@
 - **[Java Full Course Bro](https://www.youtube.com/watch?v=xk4_1vDrzzo)**
 - **[100DaysOfCode](https://www.100daysofcode.io/learn/java)**
 - **[Baeuldung Java](https://www.baeldung.com/get-started-with-java-series)**
+- **[Codecademy Course](https://www.codecademy.com/enrolled/courses/learn-java)
+
 ## Lecture 1: Basics
 ### Description:
  - Jak je java přeložena do bytekódu, jak se kompiluje a funguje JVM Zásobníky.Jak funguje Garbage Collector a co zapříčiní memory leak.
